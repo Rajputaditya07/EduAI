@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 40 33% 97%;
+    --surface: 0 0% 100%;
+    --surface-raised: 37 18% 93%;
+
+    /* Borders */
+    --border: 37 14% 88%;
+    --border-strong: 37 10% 76%;
+
+    /* Text */
+    --foreground: 45 7% 9%;
+    --text-secondary: 40 6% 40%;
+    --text-tertiary: 37 5% 61%;
+
+    /* Accent / Primary */
+    --primary: 219 76% 54%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 221 89% 96%;
+    --primary-dark: 219 76% 39%;
+
+    /* Success */
+    --success: 153 66% 28%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 147 48% 93%;
+
+    /* Warning */
+    --warning: 32 94% 37%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 45 96% 89%;
+
+    /* Danger / Destructive */
+    --destructive: 5 63% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 5 86% 96%;
+
+    /* Derived tokens (shadcn compat) */
+    --card: 0 0% 100%;
+    --card-foreground: 45 7% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 45 7% 9%;
+    --secondary: 37 18% 93%;
+    --secondary-foreground: 45 7% 9%;
+    --muted: 37 18% 93%;
+    --muted-foreground: 40 6% 40%;
+    --accent: 37 18% 93%;
+    --accent-foreground: 45 7% 9%;
+    --input: 37 14% 88%;
+    --ring: 219 76% 54%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 37 18% 93%;
+    --sidebar-foreground: 45 7% 9%;
+    --sidebar-primary: 219 76% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 37 14% 88%;
+    --sidebar-accent-foreground: 45 7% 9%;
+    --sidebar-border: 37 14% 88%;
+    --sidebar-ring: 219 76% 54%;
+  }
+
+  .dark {
+    --background: 45 7% 9%;
+    --surface: 40 6% 13%;
+    --surface-raised: 40 5% 17%;
+    --border: 40 5% 20%;
+    --border-strong: 40 4% 30%;
+    --foreground: 40 33% 97%;
+    --text-secondary: 37 5% 61%;
+    --text-tertiary: 40 6% 40%;
+    --primary: 219 76% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 219 50% 15%;
+    --primary-dark: 219 76% 70%;
+    --success: 153 50% 40%;
+    --success-light: 153 30% 15%;
+    --warning: 32 80% 50%;
+    --warning-light: 32 40% 15%;
+    --destructive: 5 63% 55%;
+    --destructive-light: 5 40% 15%;
+    --card: 40 6% 13%;
+    --card-foreground: 40 33% 97%;
+    --popover: 40 6% 13%;
+    --popover-foreground: 40 33% 97%;
+    --secondary: 40 5% 17%;
+    --secondary-foreground: 40 33% 97%;
+    --muted: 40 5% 17%;
+    --muted-foreground: 37 5% 61%;
+    --accent: 40 5% 17%;
+    --accent-foreground: 40 33% 97%;
+    --input: 40 5% 20%;
+    --ring: 219 76% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border-strong)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border-strong));
+    border-radius: 3px;
+  }
+}
